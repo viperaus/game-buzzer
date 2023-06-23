@@ -1,0 +1,12 @@
+{
+  "arrowParens": "always",
+  "trailingComma": "es5",
+  "jsxSingleQuote": false,
+  "useTabs": false,
+  "tabWidth": 2,
+  "singleAttributePerLine": false,
+  "requirePragma": false,
+  "quoteProps": "as-needed",
+  "htmlWhitespaceSensitivity": "css",
+  "editorconfig": false
+}
