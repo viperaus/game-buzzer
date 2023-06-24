@@ -4,8 +4,10 @@ Built to begin learning some basic NextJS
 
 ###TODO:
 
-[ ] - Fix default settings not showing selected options
+[x] - Fix default settings not showing selected options
 
 [ ] - Add more buzzer sounds
 
-[ ] - Update styles 
+[x] - Update styles 
+
+[ ] - Ability to change player buzzer colour
