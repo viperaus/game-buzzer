@@ -1,12 +1,8 @@
 "use client";
+import { loadSettings } from "@/app/settings/helpers/settingsStorage";
 import { NextPage } from "next";
 
-const sounds = [
-  { id: 1, file: "/audio/blurrrurp.mp3", name: "Blurp" },
-  { id: 2, file: "/audio/dududah.mp3", name: "DuDah" },
-  { id: 3, file: "/audio/correct.mp3", name: "Correct" },
-  { id: 4, file: "/audio/wrong.mp3", name: "Wrong" },
-];
+import { sounds } from "@/app/helpers/sounds";
 
 interface Props {
   playerNumber: number;
@@ -17,6 +13,8 @@ const SoundSelection: NextPage<Props> = ({
   playerNumber,
   handleSoundChange,
 }) => {
+  const settings = loadSettings();
+
   return (
     <select
       onChange={(e) => {
@@ -25,6 +23,16 @@ const SoundSelection: NextPage<Props> = ({
       className=" dark:bg-black dark:text-white dark:border dark:border-gray-200 dark:rounded-md px-2 py-2"
     >
       {sounds.map((sound) => {
+        if (
+          (playerNumber === 1 && settings.player1Sound === sound.file) ||
+          (playerNumber === 2 && settings.player2Sound === sound.file)
+        ) {
+          return (
+            <option key={sound.id} value={sound.file} selected>
+              {sound.name}
+            </option>
+          );
+        }
         return (
           <option key={sound.id} value={sound.file}>
             {sound.name}
