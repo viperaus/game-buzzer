@@ -1,11 +1,12 @@
+import { sounds } from "@/app/helpers/sounds";
 interface Settings {
   player1Sound: string;
   player2Sound: string;
 }
 
 const defaultSettings = {
-  player1Sound: "/audio/blurrrurp.mp3",
-  player2Sound: "/audio/dududah.mp3",
+  player1Sound: sounds[0].file,
+  player2Sound: sounds[1].file,
 } satisfies Settings;
 
 export const loadSettings = (): Settings => {
