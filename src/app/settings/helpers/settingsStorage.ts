@@ -1,3 +1,4 @@
+"use client";
 import { sounds } from "@/app/helpers/sounds";
 interface Settings {
   player1Sound: string;
