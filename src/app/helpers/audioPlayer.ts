@@ -1,5 +1,6 @@
 import UIFx from "uifx";
 import { loadSettings } from "../settings/helpers/settingsStorage";
+import { sounds } from "./sounds";
 
 export const playSound = (
   playerNumber: number,
@@ -13,7 +14,6 @@ export const playSound = (
 
   setIsPlaying(true);
 
-  console.log(`Playing sound for player: ${playerNumber}`);
   const settings = loadSettings();
   let soundToPlay = "";
   switch (playerNumber) {
@@ -30,7 +30,9 @@ export const playSound = (
   });
   bell.play();
 
+  const s = sounds.find((sound) => sound.file === soundToPlay)!;
+
   setTimeout(() => {
     setIsPlaying(false);
-  }, 1500);
+  }, s.length);
 };
