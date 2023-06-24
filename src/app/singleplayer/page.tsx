@@ -3,14 +3,14 @@ import { playSound } from "../helpers/audioPlayer";
 
 const SinglePlayerPage = () => {
   return (
-    <div className="w-full h-screen text-center">
+    <div className="w-full h-screen text-center flex content-around items-center justify-center overflow-hidden">
       <button
-        className="w-3/4 border rounded-lg h-screen bg-red-700"
+        className="mx-4 border rounded-lg h-3/4 bg-blue-700 text-white flex-grow "
         onClick={() => {
           playSound(1);
         }}
       >
-        &nbsp;
+        <div className="text-5xl">Player 1</div>
       </button>
     </div>
   );

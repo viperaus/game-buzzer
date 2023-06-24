@@ -7,22 +7,22 @@ const MultiPlayerPage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <div className="w-full h-screen text-center">
+    <div className="w-full h-screen text-center flex content-around items-center justify-center overflow-hidden ">
       <button
-        className="w-3/4 border rounded-lg h-1/2 bg-red-700"
+        className="mx-4 border rounded-lg h-3/4 bg-blue-700 text-white flex-grow "
         onClick={() => {
           playSound(1, isPlaying, setIsPlaying);
         }}
       >
-        &nbsp;
+        <div className="rotate-90 text-5xl">Player 1</div>
       </button>
       <button
-        className="w-3/4 border rounded-lg h-1/2 bg-green-700"
+        className="mx-4 border rounded-lg h-3/4  bg-orange-600 text-white  flex-grow "
         onClick={() => {
           playSound(2, isPlaying, setIsPlaying);
         }}
       >
-        &nbsp;
+        <div className="-rotate-90 text-5xl">Player 2</div>
       </button>
     </div>
   );
