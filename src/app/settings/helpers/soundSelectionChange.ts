@@ -14,6 +14,6 @@ export const handleSoundChange = (
       settings.player2Sound = e.target.value;
       break;
   }
-  console.log(settings);
+  console.log(`Settings updated`, settings);
   storeSettings(settings);
 };

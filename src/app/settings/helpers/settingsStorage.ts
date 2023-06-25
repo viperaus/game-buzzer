@@ -1,4 +1,3 @@
-"use client";
 import { sounds } from "@/app/helpers/sounds";
 interface Settings {
   player1Sound: string;
@@ -10,7 +9,8 @@ const defaultSettings = {
   player2Sound: sounds[1].file,
 } satisfies Settings;
 
-export const loadSettings = (): Settings => {
+export function loadSettings(): Settings {
+  if (typeof window === "undefined") return defaultSettings;
   if (!localStorage.getItem("buzzer_settings"))
     localStorage.setItem("buzzer_settings", JSON.stringify(defaultSettings));
 
@@ -19,8 +19,8 @@ export const loadSettings = (): Settings => {
   );
 
   return settings;
-};
+}
 
-export const storeSettings = (settings: Settings) => {
+export function storeSettings(settings: Settings) {
   localStorage.setItem("buzzer_settings", JSON.stringify(settings));
-};
+}
