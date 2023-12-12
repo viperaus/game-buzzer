@@ -11,3 +11,5 @@ Built to begin learning some basic NextJS
 [x] - Update styles 
 
 [ ] - Ability to change player buzzer colour
+
+[ ] - Disable ability to zoom screen
